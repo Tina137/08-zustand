@@ -6,7 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useId } from "react";
 import { postList } from "@/lib/api";
 import { useRouter } from "next/navigation";
-import { useNoteDraftStore } from "@/lib/stores/noteStore";
+import { useNoteDraftStore } from "@/lib/store/noteStore";
 
 // const initialValues: InitialValuesProps = {
 //   title: "",
