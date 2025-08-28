@@ -1,21 +1,15 @@
 "use client";
 import css from "./NoteForm.module.css";
 import type { InitialValuesProps } from "../../types/note";
-// import * as Yup from "yup";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useId } from "react";
 import { postList } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
 
-// const initialValues: InitialValuesProps = {
-//   title: "",
-//   content: "",
-//   tag: "Todo",
-// };
-
 export default function NoteForm() {
   const router = useRouter();
+  const queryClient = useQueryClient();
 
   const fieldId = useId();
 
@@ -36,6 +30,7 @@ export default function NoteForm() {
     mutationFn: postList,
     onSuccess: () => {
       clearDraft();
+      queryClient.invalidateQueries({ queryKey: ["notes"] });
       router.push("/notes/filter/All");
     },
   });

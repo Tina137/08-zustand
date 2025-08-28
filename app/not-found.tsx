@@ -3,10 +3,10 @@ import css from "./not-found.module.css";
 
 export const metadata: Metadata = {
   title: "Not-found",
-  description: "Sorry, something wetn wrong...",
+  description: "Sorry, something went wrong...",
   openGraph: {
     title: "Not-found",
-    description: "Sorry, something wetn wrong...",
+    description: "Sorry, something went wrong...",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
